@@ -6,9 +6,23 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
+  //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-17';
+  userName = 'John Doe';
+  dataStatus = 'active';
+  userEmail = 'ahmed@Dev.com';
+  userPhone = '123-456-7890';
+  userStatus = false;
+
+
+  getapi() {
+    console.log('API called');
+  }
+  
 }
 
+
+
+ 
