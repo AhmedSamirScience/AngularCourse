@@ -4,7 +4,10 @@
     - Data Interpolation {{ }}
     - Property Binding  [ ] 
     - attribute Binding [attr.]
-    - Event Binding (click)
+    - Event Binding (e.g. click)
+    - Directives (ngIf, ngFor, ngSwitch)
+    - ngNonBindable
+    - class Binding
 -->
 
 <!-- Data Interpolation -->
@@ -23,6 +26,44 @@
   User Name : {{ userName }}
 
   <!-- event binding  -->
-  <button (click)="getapi()"> 
-    Toggle Status
-  </button> 
+  <button (click)="getapi()"> Toggle Status1  </button> 
+  <button  class = "btn btn-black" (click)="getapi()"> Toggle Status2  </button>
+  <input type="text" class="form-control" (keydown)="showAlert()"/>
+  <input type="text" class="form-control" (input)="showAlert2($event)"/>
+  <input type="text" class="form-control" (keydown.e)="showAlert2($event)"/>
+  <input type="text" class="form-control" (keydown.control.c)="showAlert2($event)" (keydown)="getapi()"/>
+
+
+  <!-- ay 7aga btbdi b ng btb2a directive -->
+  <!-- ngIf Directive -->
+  <!-- de 3lsha law 3ayez aktb 7aga w m3mlsh 3aleha binding-->
+  <p ngNonBindable> {{userName}}</p>
+  <p> {{userName}}</p>
+
+
+  <!-- class  binding -->
+
+  <!-- da hna by2olk a3mel class gowa el bta3 da msh 3aref lesa bstkhdmo fe eh bas da option m3ana-->
+  <p [class]="'active'"> ahmed samir </p>
+
+  <!-- de hna by2olk a3mel class based 3ala condition law true a3mlo active law false a3mlo inactive-->
+  <p [class]="isTrue? 'active' : 'inactive'"> ahmed samir0 </p>
+
+  <!-- tyb law 3ayez a3mlo law true a3mlo law msh trrue mt3mlsh fa hktbholk wara b3d 3lshan tfham el syntax aktr-->
+   <!-- dol kolohom nafs el 7aga bas bkhtlaf el syntax -->
+    <!-- khoud balak 3lshan t3mel class binding howa byb2a montzer mnk bas esm el class bas enma fl style htfre2 showaya -->
+  <p [class.active]="isTrue"> ahmed samir1 </p>
+  <p [class]="isTrue? 'active' : ''"> ahmed samir2 </p>
+  <p [class.active]="isTrue === true"> ahmed samir3 </p>
+
+  <p [class.inactive]="!isTrue"> ahmed samir4 </p>
+
+
+  <!-- style binding -->
+  <!-- hna fl style binding howa montazer mnk 7agetn msh 7aga wa7da fl class binding howa kan fl awl montazer mnk 7aga wa7da ely hia esm el class enma fl style howa montazer mnk 
+   7agten awl 7aga asm el property w el value bt3ha tyb el property zai eh zai maslan el color -->
+  <p [style.color]="isTrue ? 'green' : 'red'"> ahmed samir5 </p>
+  <p [style.color]="isTrue ? 'green' : 'red'" [style.fontSize.px]="20"> ahmed samir6 </p>
+  <p [style.color]="isTrue ? 'green' : 'red'" [style.fontSize.px]="20" [style.fontWeight]="'bold'"> ahmed samir7 </p>
+  <p [style.color]="isTrue ? 'green' : 'red'" [style.fontSize.px]="20" [style.fontWeight]="'bold'" [style.textDecoration]="'underline'"> ahmed samir8 </p>
+  <p [style]="isTrue ? 'color:green' : 'color:red'"> ahmed samir9 </p>

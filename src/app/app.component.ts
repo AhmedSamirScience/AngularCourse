@@ -15,10 +15,17 @@ export class AppComponent {
   userEmail = 'ahmed@Dev.com';
   userPhone = '123-456-7890';
   userStatus = false;
-
+  isTrue:Boolean = false;
 
   getapi() {
     console.log('API called');
+  }
+
+  showAlert() {
+    alert('Button clicked!');
+  }
+  showAlert2(event: any) {
+    console.log('Input value:', event.target.value);
   }
   
 }
