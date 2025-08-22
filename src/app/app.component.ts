@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, viewChild, ViewChild, ViewChildren } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
@@ -8,6 +8,8 @@ import { GizaComponent } from './giza/giza.component';
 import { AlexComponent } from './alex/alex.component';
 import { stat } from 'fs';
 import { CairoComponent } from "./cairo/cairo.component";
+import { SahelComponent } from "./sahel/sahel.component";
+import { SharmComponent } from "./sharm/sharm.component";
 
 
  interface IProduct {  
@@ -20,7 +22,7 @@ import { CairoComponent } from "./cairo/cairo.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent],
+  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent, SahelComponent, SharmComponent],
   templateUrl: './app.component.html',
   //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
@@ -112,10 +114,30 @@ export class AppComponent {
 
   @ViewChild('myComp', {static: true, read : ElementRef}) childComponentAlex !: ElementRef;
   ngAfterViewInit() {
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Example of how to access the child component's ElementRef
     this.childComponentAlex.nativeElement.classList.add('bg-danger')
 
     console.log('Child Component ElementRef:', this.childComponentAlex.nativeElement);
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //da bygeb error fa sebak mno
+    // this.componentsLists.forEach((comp) => {
+    //   if (comp instanceof SharmComponent) {
+    //     comp.userEmailFromSharm = 'Updated User from Parent to Sharm Component';
+    //   } else if (comp instanceof SahelComponent) {
+    //     comp.userEmailFromSahel = 'Updated User from Parent to Sahel Component';
+    //   }
+    // });
+
+    this.componentsLists.forEach((comp) => {
+     comp.nativeElement.children
+    });
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
   }
 
 
@@ -123,7 +145,14 @@ export class AppComponent {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//khoud balak howa mn el akher el fr2 maben el view child w el view children eno wa7ed by-listen 3ala aktr mn element aw aktr mn componenet w wa7ed by-listen 3ala element aw component wa7ed bas 
+// 3andak bardo 7war el static w el read
+//el component 3andak msh btt3'yar y3ani el componenet sabta fa sa3tha bt2olo static true fa khalas t2dar twsal lel component de fe ay mar7ala 
+//enma el static false da m3naha enk t2dar twsal lel component fe mar7ala mo3iana 
+//etklmna 3ala el read 2oltlk hna ana 3ayez ashoufhom as eno hia element ref y3ni 3ayez akhoush 3ala el html bt3hom aw 3ayez adkhoul 3ala el view msh 3ayez ashouf el type script 
 
+//@ViewChildren('comp') componentsLists !: QueryList <SharmComponent | SahelComponent>;
+@ViewChildren('comp', { read: ElementRef }) componentsLists !: QueryList <ElementRef>;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
