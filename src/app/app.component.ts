@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { SwimmingComponent } from "./swimming/swimming.component";
+import { GizaComponent } from './giza/giza.component';
 
 
  interface IProduct {  
@@ -16,7 +17,7 @@ import { SwimmingComponent } from "./swimming/swimming.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent],
+  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent],
   templateUrl: './app.component.html',
   //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
