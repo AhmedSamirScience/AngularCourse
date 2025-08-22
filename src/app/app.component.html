@@ -119,12 +119,16 @@
   <!-- khoud balak mynf3sh n7out div gowa div w 3lshan kda 3mlna container 3lshan n7out fe div -->
   <ng-container *ngIf="products.length > 0; else productIsEmpty">
 
-  <div *ngFor="let product of products; let i = index ; let co = count" class="card" >
+  <div *ngFor="let product of products; let i = index ; let co = count; trackBy: trackById" class="card" >
     <p> {{i + 1}} - {{product.name}} - {{product.price}} </p>
     <img [src]="product.image" alt="{{product.name}}" width="100" />
     <p> Total Count {{co}}</p>
+
   </div>
   </ng-container>
+
+      <button class="btn btn-danger" (click)="updateProduct()"> Update Product </button>
+
 
   <ng-template #productIsEmpty>
     <h2 class="bg-danger text-center"> No Products Available </h2>
