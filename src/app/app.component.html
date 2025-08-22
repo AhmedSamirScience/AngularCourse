@@ -147,4 +147,7 @@
 
 
 
+<app-swimming (emitData)="getDataFromChild = $event"></app-swimming>
+<h2> Data from Child Component : {{getDataFromChild}} </h2>
 
+<app-swimming (emitData)="logData($event)"></app-swimming>

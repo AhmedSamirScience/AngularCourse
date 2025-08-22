@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { SwimmingComponent } from "./swimming/swimming.component";
 
 
  interface IProduct {  
@@ -15,7 +16,7 @@ import { HomeComponent } from './home/home.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ FormsModule, CommonModule , ContactComponent, HomeComponent ],
+  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent],
   templateUrl: './app.component.html',
   //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
@@ -32,7 +33,12 @@ export class AppComponent {
   isTrue:Boolean = true;
   userRole = 'admin';
   friends = ['Ahmed', 'Ali', 'Sara', 'Mona'];
+  getDataFromChild : String = 'None';
 
+  logData(e: any) {
+    console.log('Data from child component:', e);
+  }
+  
   getapi() {
     console.log('API called');
   }
