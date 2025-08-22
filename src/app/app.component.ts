@@ -7,6 +7,7 @@ import { SwimmingComponent } from "./swimming/swimming.component";
 import { GizaComponent } from './giza/giza.component';
 import { AlexComponent } from './alex/alex.component';
 import { stat } from 'fs';
+import { CairoComponent } from "./cairo/cairo.component";
 
 
  interface IProduct {  
@@ -19,7 +20,7 @@ import { stat } from 'fs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent],
+  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent],
   templateUrl: './app.component.html',
   //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
@@ -116,6 +117,11 @@ export class AppComponent {
 
     console.log('Child Component ElementRef:', this.childComponentAlex.nativeElement);
   }
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
