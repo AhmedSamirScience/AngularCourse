@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about',
-  standalone: true,
-  imports: [],
+  // This component is not standalone, it is part of the AppModule w bkda 2a2dr astkhdmha fl app.module.ts
+  standalone: false,
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

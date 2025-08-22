@@ -67,3 +67,72 @@
   <p [style.color]="isTrue ? 'green' : 'red'" [style.fontSize.px]="20" [style.fontWeight]="'bold'"> ahmed samir7 </p>
   <p [style.color]="isTrue ? 'green' : 'red'" [style.fontSize.px]="20" [style.fontWeight]="'bold'" [style.textDecoration]="'underline'"> ahmed samir8 </p>
   <p [style]="isTrue ? 'color:green' : 'color:red'"> ahmed samir9 </p>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- two way data binding    (Ng Model)-->
+
+ <!-- 3lshan twadi el value ely httktb fl input w twdeha lel .ts class lazem t3mel import fl .ts b2esm FormsModule -->
+ <input type="text" placeholder="search" [(ngModel)]="searchInput" />
+ 
+ <!-- attribute directives-->
+ {{searchInput}}
+
+ <p  [ngClass]="{ 'bg-danger':isTrue, 'text-center': 10>5   }"> 
+  User Name is 1 : {{userName}}
+
+  <P [ngClass]="{ 'bg-success':isTrue, 'text-center': 10>5   }"> 
+    User Email is 2 : {{userEmail}}
+  </P>
+
+    <P [ngClass]="{ 'bg-success':isTrue, 'text-center': 10>5 && isTrue === true }"> 
+    User Email is 3 : {{userEmail}}
+  </P>
+
+
+<p [ngStyle]="{ 'color': isTrue ? 'yellow' : 'blue' }"> sadhjashdkhsad  </p>
+
+
+
+<!-- #region -->
+
+<!-- Structure Dirctives -->
+ <p> Stucture Directives</p>
+  <p *ngIf="userStatus"> User is Active1 </p>
+
+
+  <div [ngSwitch]="userRole">
+    <p *ngSwitchCase="'admin'"> User is Active admin 2 </p>
+    <p *ngSwitchCase="'user'"> User is active user 2</p>
+    <p *ngSwitchDefault> User is active default 2</p>
+  </div>
+
+
+  <!-- ngFor Directive -->
+  <div *ngFor="let friend of friends; let i = index">
+    <p> {{i + 1}} - {{friend}} </p>
+  </div>
+
+
+  <!-- khoud balak mynf3sh n7out div gowa div w 3lshan kda 3mlna container 3lshan n7out fe div -->
+  <ng-container *ngIf="products.length > 0; else productIsEmpty">
+
+  <div *ngFor="let product of products; let i = index ; let co = count" class="card" >
+    <p> {{i + 1}} - {{product.name}} - {{product.price}} </p>
+    <img [src]="product.image" alt="{{product.name}}" width="100" />
+    <p> Total Count {{co}}</p>
+  </div>
+  </ng-container>
+
+  <ng-template #productIsEmpty>
+    <h2 class="bg-danger text-center"> No Products Available </h2>
+  </ng-template>
+
+
+
+
+
+
+
