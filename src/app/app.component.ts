@@ -5,6 +5,8 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { SwimmingComponent } from "./swimming/swimming.component";
 import { GizaComponent } from './giza/giza.component';
+import { AlexComponent } from './alex/alex.component';
+import { stat } from 'fs';
 
 
  interface IProduct {  
@@ -17,7 +19,7 @@ import { GizaComponent } from './giza/giza.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent],
+  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent],
   templateUrl: './app.component.html',
   //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
@@ -87,6 +89,8 @@ export class AppComponent {
 
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+  //veiw child [element ref]
   @ViewChild('el', { static: true }) myEL !: ElementRef;
 
   ngOnInit() {
@@ -95,9 +99,29 @@ export class AppComponent {
     //this.myEL.nativeElement.classList.remove('bg-danger') you can also remove and so on 
 
     console.log('here is the data : -> ' + this.myEL.nativeElement);
+
+    for(let i=0; i<this.childComponentAlex.nativeElement.children.length; i++){
+        this.childComponentAlex.nativeElement.children[i].classList.add('bg-danger');
+    }
+    //this.childComponentAlex.userName = "Alex From Parent" // this now has ana error but it will be good if you intitialize as componenet not element ref like this  ->   @ViewChild('myComp', {static: true, read : ElementRef}) childComponentAlex !: ElementRef;
+
   }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  
+  //view child [componenet ]
+
+  @ViewChild('myComp', {static: true, read : ElementRef}) childComponentAlex !: ElementRef;
+  ngAfterViewInit() {
+    // Example of how to access the child component's ElementRef
+    this.childComponentAlex.nativeElement.classList.add('bg-danger')
+
+    console.log('Child Component ElementRef:', this.childComponentAlex.nativeElement);
+  }
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 }
 
 
