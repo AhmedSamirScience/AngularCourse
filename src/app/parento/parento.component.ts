@@ -15,6 +15,8 @@ export class ParentoComponent {
   @ContentChild(ChildoComponent, {static: true}) childo !:  ChildoComponent;
   @ContentChild('myp', {static: true , descendants  : true}) myp2!: ElementRef;
 
+  @ContentChild('my', {static: true , descendants  : true}) my!: ElementRef;
+
   ngOnInit(): void  {
     console.log('Parento Component initialized');
 
@@ -25,6 +27,10 @@ export class ParentoComponent {
     console.log(this.childo.userEmail);
     console.log('**************');
     console.log(this.myp2);
+    console.log('**************');
+    console.log(this.my);
+    console.log('**************');
+
 
     console.log(this.childo.username);
   }
