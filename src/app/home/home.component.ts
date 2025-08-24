@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
+import { RouterOutlet, RouterLinkActive }  from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet, RouterLinkActive],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
