@@ -14,6 +14,7 @@ import { ParentoComponent } from "./parento/parento.component";
 import { ChildoComponent } from "./childo/childo.component";
 import { LifecycletestComponent } from "./lifecycletest/lifecycletest.component";
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from "./navbar/navbar.component";
 
 
  interface IProduct {  
@@ -26,7 +27,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent, SahelComponent, SharmComponent, ParentoComponent, ChildoComponent, LifecycletestComponent, RouterOutlet],
+  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent, SahelComponent, SharmComponent, ParentoComponent, ChildoComponent, LifecycletestComponent, RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
