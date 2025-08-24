@@ -12,6 +12,7 @@ import { SahelComponent } from "./sahel/sahel.component";
 import { SharmComponent } from "./sharm/sharm.component";
 import { ParentoComponent } from "./parento/parento.component";
 import { ChildoComponent } from "./childo/childo.component";
+import { LifecycletestComponent } from "./lifecycletest/lifecycletest.component";
 
 
  interface IProduct {  
@@ -24,7 +25,7 @@ import { ChildoComponent } from "./childo/childo.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent, SahelComponent, SharmComponent, ParentoComponent, ChildoComponent],
+  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent, SahelComponent, SharmComponent, ParentoComponent, ChildoComponent, LifecycletestComponent],
   templateUrl: './app.component.html',
   //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
@@ -158,6 +159,8 @@ export class AppComponent {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 }
 
