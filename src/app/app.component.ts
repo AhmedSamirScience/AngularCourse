@@ -10,6 +10,8 @@ import { stat } from 'fs';
 import { CairoComponent } from "./cairo/cairo.component";
 import { SahelComponent } from "./sahel/sahel.component";
 import { SharmComponent } from "./sharm/sharm.component";
+import { ParentoComponent } from "./parento/parento.component";
+import { ChildoComponent } from "./childo/childo.component";
 
 
  interface IProduct {  
@@ -22,7 +24,7 @@ import { SharmComponent } from "./sharm/sharm.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent, SahelComponent, SharmComponent],
+  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent, SahelComponent, SharmComponent, ParentoComponent, ChildoComponent],
   templateUrl: './app.component.html',
   //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
