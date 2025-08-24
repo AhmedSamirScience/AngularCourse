@@ -13,6 +13,7 @@ import { SharmComponent } from "./sharm/sharm.component";
 import { ParentoComponent } from "./parento/parento.component";
 import { ChildoComponent } from "./childo/childo.component";
 import { LifecycletestComponent } from "./lifecycletest/lifecycletest.component";
+import { RouterOutlet } from '@angular/router';
 
 
  interface IProduct {  
@@ -25,7 +26,7 @@ import { LifecycletestComponent } from "./lifecycletest/lifecycletest.component"
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent, SahelComponent, SharmComponent, ParentoComponent, ChildoComponent, LifecycletestComponent],
+  imports: [FormsModule, CommonModule, ContactComponent, HomeComponent, SwimmingComponent, GizaComponent, AlexComponent, CairoComponent, SahelComponent, SharmComponent, ParentoComponent, ChildoComponent, LifecycletestComponent, RouterOutlet],
   templateUrl: './app.component.html',
   //template: '<p>user Phone : {{ userPhone}}</p>',
   styleUrl: './app.component.scss'
